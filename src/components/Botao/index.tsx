@@ -1,17 +1,14 @@
-import React from 'react';
-import style from './Botao.module.scss';
+import React from "react";
+import style from "./Botao.module.scss";
 
-interface IProps {
-  children: React.ReactNode;
+type Props ={
+  children: string,
+  type?: "button" | "submit" | "reset" | undefined
 }
 
-/* Componente Botao - extendido de react */
-class Botao extends React.Component<IProps>{
-  render() {
-    // const estaAtivo = false;
-    // const styles = {
-    //     backgroundColor: estaAtivo ? "green" : "red",
-    return <button className={style.botao}>{this.props.children}</button>
+class Botao extends React.Component<Props> {
+  render(): React.ReactNode {
+    return <button type={this.props.type} className={style.botao}>{this.props.children}</button>;
   }
 }
 
